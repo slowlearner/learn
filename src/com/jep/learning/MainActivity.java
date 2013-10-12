@@ -2,6 +2,8 @@ package com.jep.learning;
 
 import java.util.ArrayList;
 
+import com.jep.learning.services.SessionService;
+
 
 import android.os.Bundle;
 import android.content.Intent;
@@ -28,7 +30,7 @@ public class MainActivity extends CommonActivity {
 		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);		
 		lv.setAdapter(adapter);
-		lv.setOnItemClickListener(onItemClickListener);
+		lv.setOnItemClickListener(onItemClickListener);		
 	}
 	
 	private OnItemClickListener onItemClickListener = new OnItemClickListener() {
