@@ -23,7 +23,7 @@ public class MainAccountActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent intent  = new Intent();
-				intent.setClass(getApplicationContext(), AccountListActivity.class);
+				intent.setClass(getApplicationContext(), OpenAccountActivity.class);
 				startActivity(intent);
 			}
 		});

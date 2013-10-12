@@ -8,12 +8,12 @@ import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class AccountListActivity extends  CommonActivity {
+public class OpenAccountActivity extends  CommonActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_account_list);
+		setContentView(R.layout.activity_open_account);
 		
 		ListView lv = (ListView) findViewById(R.id.listAccounts);
 		

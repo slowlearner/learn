@@ -26,17 +26,17 @@ public final class R {
     public static final class id {
         public static final int action_settings=0x7f080012;
         public static final int btnBack=0x7f080008;
-        public static final int btnCreate=0x7f080002;
-        public static final int btnExit=0x7f080005;
+        public static final int btnCreate=0x7f080001;
+        public static final int btnExit=0x7f080004;
         public static final int btnHome=0x7f08000b;
         public static final int btnNext=0x7f080007;
-        public static final int btnOpenAccount=0x7f080004;
+        public static final int btnOpenAccount=0x7f080003;
         public static final int btnRetake=0x7f08000c;
-        public static final int editName=0x7f080001;
+        public static final int editName=0x7f080000;
         public static final int layoutResultContainer=0x7f08000a;
-        public static final int listAccounts=0x7f080000;
+        public static final int listAccounts=0x7f080005;
         public static final int listChapters=0x7f080011;
-        public static final int listMenu=0x7f080003;
+        public static final int listMenu=0x7f080002;
         public static final int listQuizzes=0x7f08000f;
         public static final int radioGroup=0x7f080009;
         public static final int textQuestionTitle=0x7f080006;
@@ -45,10 +45,10 @@ public final class R {
         public static final int webView1=0x7f080010;
     }
     public static final class layout {
-        public static final int activity_account_list=0x7f030000;
-        public static final int activity_create_account=0x7f030001;
-        public static final int activity_main=0x7f030002;
-        public static final int activity_main_account=0x7f030003;
+        public static final int activity_create_account=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_main_account=0x7f030002;
+        public static final int activity_open_account=0x7f030003;
         public static final int activity_question=0x7f030004;
         public static final int activity_quiz_result=0x7f030005;
         public static final int activity_quizzes=0x7f030006;

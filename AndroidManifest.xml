@@ -73,7 +73,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.jep.learning.AccountListActivity"
+            android:name="com.jep.learning.OpenAccountActivity"
             android:label="@string/title_activity_account_list"
             android:parentActivityName="com.jep.learning.MainAccountActivity" >
             <meta-data
