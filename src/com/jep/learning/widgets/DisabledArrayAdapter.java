@@ -36,7 +36,6 @@ public class DisabledArrayAdapter<T> extends ArrayAdapter<T>{
 		}
 		User user = service.getCurrentUser();
 		User data = service.getUserSession(user);
-		Log.e("app", "User is at chapter" +  data.getCurrentChapter() + "postion is" + position);
 		if(data.getCurrentChapter() >= position) {
 			return true;
 		}

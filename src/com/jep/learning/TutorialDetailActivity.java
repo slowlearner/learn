@@ -7,7 +7,6 @@ import com.jep.learning.services.SessionService;
 import com.jep.learning.services.TutorialService;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -44,9 +43,12 @@ public class TutorialDetailActivity extends CommonActivity {
 		
 		
 		SessionService session = new SessionService(prefs);
-		if(currentTutorial == chapter.getTutorials().size()-1) {
-			Log.e("app", "advancing user chapter to " + chapter.getId());
-			User user = session.getCurrentUser();
+		User user = session.getCurrentUser();
+		User userInSession = session.getUserSession(user);
+		
+		if(currentTutorial == chapter.getTutorials().size()-1 &&
+				chapter.getId()+1 > userInSession.getCurrentChapter()
+				) {
 			user.setCurrentChapter(chapter.getId() + 1);
 			session.saveUserSession(user);
 		}
