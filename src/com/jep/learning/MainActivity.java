@@ -2,7 +2,6 @@ package com.jep.learning;
 
 import java.util.ArrayList;
 
-import com.jep.learning.services.SessionService;
 
 
 import android.os.Bundle;

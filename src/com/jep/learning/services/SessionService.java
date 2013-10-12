@@ -12,14 +12,11 @@ public class SessionService {
 		this.prefs = prefs;
 	}
 	public void saveUserSession(User user) {
-		User user_in_session = getUser(user.getId());
-		if(user_in_session == null) {
-			String key = "session_user" + user.getId();
-			String u = Serializer.serialize(user);
-			Editor editor = prefs.edit();
-			editor.putString(key, u);
-			editor.commit();
-		}		
+		String key = "session_user" + user.getId();
+		String u = Serializer.serialize(user);
+		Editor editor = prefs.edit();
+		editor.putString(key, u);
+		editor.commit();
 	}
 	
 	public void setCurrentUser(User user) {
@@ -40,14 +37,16 @@ public class SessionService {
 		return user;
 	}
 	
-	public User getUser(int id) {
-		String key = "session_user" + id;
+	public User getUserSession(User user) {
+		String key = "session_user" + user.getId();
 		String u = prefs.getString(key, "");
 		if("".equals(u)) {
-			return null;
+			//create a session
+			saveUserSession(user);
+			return user;
 		}		
-		User user = (User) Serializer.unserialize(u);
-		return user;
+		User ret = (User) Serializer.unserialize(u);
+		return ret;
 	}
 	
 	
