@@ -1,8 +1,10 @@
 package com.jep.learning.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Quiz {
+public class Quiz implements Serializable{
+	private static final long serialVersionUID = 3756700621465589538L;
 	private String title;
 	private ArrayList<Question> questions;
 	public String getTitle() {

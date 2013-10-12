@@ -1,10 +1,13 @@
 package com.jep.learning.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import android.util.Log;
 
-public class Question {
+public class Question implements Serializable{
+	
+	private static final long serialVersionUID = -9087769023463791342L;
 	private String question;
 	private ArrayList<String> choices;
 	private int answer;

@@ -2,9 +2,10 @@ package com.jep.learning;
 
 import java.util.ArrayList;
 
+import com.jep.learning.services.SessionService;
+
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
@@ -14,7 +15,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends CommonActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class MainActivity extends Activity {
 		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);		
 		lv.setAdapter(adapter);
-		lv.setOnItemClickListener(onItemClickListener);
+		lv.setOnItemClickListener(onItemClickListener);		
 	}
 	
 	private OnItemClickListener onItemClickListener = new OnItemClickListener() {
