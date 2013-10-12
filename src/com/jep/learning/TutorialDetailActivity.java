@@ -5,17 +5,13 @@ import com.jep.learning.models.Tutorial;
 import com.jep.learning.services.TutorialService;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.TextView;
 
-public class TutorialDetailActivity extends Activity {
+public class TutorialDetailActivity extends CommonActivity {
 
 	private int currentTutorial = 0;
 	private Chapter chapter;
@@ -47,9 +43,7 @@ public class TutorialDetailActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			if(currentTutorial-1 < 0) {
-				Intent intent = new Intent();
-				intent.setClass(getApplicationContext(), TutorialsActivity.class);
-				startActivity(intent);
+				back();
 				return;
 			}
 			currentTutorial--;			

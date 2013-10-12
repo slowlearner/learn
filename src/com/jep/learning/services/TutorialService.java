@@ -1,16 +1,11 @@
 package com.jep.learning.services;
 
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 import android.content.Context;
-import android.os.PatternMatcher;
 import android.util.Log;
 
 import com.jep.learning.models.Chapter;
@@ -57,7 +52,6 @@ public class TutorialService {
 	public ArrayList<Chapter> getAllTutorials() {
 		ArrayList<Chapter> chapters = new ArrayList<Chapter>();
 		
-		String filename = "tutorials.txt";
 		 try {
 			 	InputStream is = context.getAssets().open("tutorials.txt");
 			 	Scanner scanner = new Scanner(is);

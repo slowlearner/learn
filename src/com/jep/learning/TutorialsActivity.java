@@ -3,29 +3,23 @@ package com.jep.learning;
 import java.util.ArrayList;
 
 import com.jep.learning.models.Chapter;
-import com.jep.learning.models.Tutorial;
 import com.jep.learning.services.TutorialService;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
-public class TutorialsActivity extends Activity {
+public class TutorialsActivity extends CommonActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_tutorials);
+		setContentView(R.layout.activity_tutorials);		
 		
 		TutorialService service = new TutorialService(getApplicationContext());
 		ArrayList<Chapter> chapters = service.getAllTutorials();
@@ -63,5 +57,4 @@ public class TutorialsActivity extends Activity {
 		getMenuInflater().inflate(R.menu.tutorials, menu);
 		return true;
 	}
-
 }
