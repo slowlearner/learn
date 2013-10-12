@@ -24,39 +24,49 @@
         </activity>
         <activity
             android:name="com.jep.learning.TutorialDetailActivity"
-            android:label="@string/title_activity_tutorial_detail" 
+            android:label="@string/title_activity_tutorial_detail"
             android:parentActivityName="com.jep.learning.TutorialsActivity" >
-	        <!-- Parent activity meta-data to support 4.0 and lower -->
-	        <meta-data
-	            android:name="android.support.PARENT_ACTIVITY"
-	            android:value="com.jep.learning.TutorialsActivity" />
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jep.learning.TutorialsActivity" />
         </activity>
         <activity
             android:name="com.jep.learning.TutorialsActivity"
-            android:label="@string/title_activity_main" 
-	        android:parentActivityName="com.jep.learning.MainActivity" >
-	        <!-- Parent activity meta-data to support 4.0 and lower -->
-	        <meta-data
-	            android:name="android.support.PARENT_ACTIVITY"
-	            android:value="com.jep.learning.MainActivity" />
+            android:label="@string/title_activity_main"
+            android:parentActivityName="com.jep.learning.MainActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jep.learning.MainActivity" />
         </activity>
         <activity
             android:name="com.jep.learning.QuizzesActivity"
             android:label="@string/title_activity_quizzes"
-	        android:parentActivityName="com.jep.learning.MainActivity" >
-	        <!-- Parent activity meta-data to support 4.0 and lower -->
-	        <meta-data
-	            android:name="android.support.PARENT_ACTIVITY"
-	            android:value="com.jep.learning.MainActivity" />
+            android:parentActivityName="com.jep.learning.MainActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jep.learning.MainActivity" />
         </activity>
         <activity
             android:name="com.jep.learning.QuestionActivity"
             android:label="@string/title_activity_question"
             android:parentActivityName="com.jep.learning.QuizzesActivity" >
-	        <!-- Parent activity meta-data to support 4.0 and lower -->
-	        <meta-data
-	            android:name="android.support.PARENT_ACTIVITY"
-	            android:value="com.jep.learning.QuizzesActivity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jep.learning.QuizzesActivity" />
+        </activity>
+        <activity
+            android:name="com.jep.learning.QuizResultActivity"
+            android:label="@string/title_activity_quiz_result" 
+            android:parentActivityName="com.jep.learning.QuestionActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jep.learning.QuestionActivity" />
         </activity>
     </application>
 

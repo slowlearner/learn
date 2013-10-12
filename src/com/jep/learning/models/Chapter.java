@@ -3,6 +3,14 @@ package com.jep.learning.models;
 import java.util.ArrayList;
 
 public class Chapter {
+	private int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	private String title;
 	private ArrayList<Tutorial> tutorials;
 	

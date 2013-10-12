@@ -62,11 +62,11 @@ public class TutorialService {
 			 		String[] s = line.split(":");
 			 		
 			 		Chapter chapter = new Chapter();
-			 		chapter.setTitle(s[0]);
+			 		chapter.setId(Integer.parseInt(s[0]));
+			 		chapter.setTitle(s[1]);
 			 		
-			 		String[] pages = s[1].split(",");
 			 		
-			 		
+			 		String[] pages = s[2].split(",");
 			 		ArrayList<Tutorial> tutorials = new ArrayList<Tutorial>();
 			 		for(int i=0; i<pages.length; i++) {
 			 			String tutorialfile = pages[i];
@@ -75,10 +75,8 @@ public class TutorialService {
 			 		}
 			 		chapter.setTutorials(tutorials);
 			 		chapters.add(chapter);			 		
-			 	}
-			 	
+			 	}			 	
 	        } catch (IOException e) {
-	            // TODO Auto-generated catch block
 	        	Log.e("app", e.getMessage());
 	        }
 		 return chapters;

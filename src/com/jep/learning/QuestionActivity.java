@@ -4,6 +4,7 @@ import com.jep.learning.models.Question;
 import com.jep.learning.models.Quiz;
 import com.jep.learning.services.QuizService;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -90,10 +91,10 @@ public class QuestionActivity extends CommonActivity {
 		@Override
 		public void onClick(View v) {
 			if(currentQuestion+1 >= quiz.getQuestions().size()) {
-				
-				for(Question q: quiz.getQuestions()) {
-					Log.e("app", "correct " + q.isCorrect());
-				}
+				Intent intent = new Intent();
+				intent.setClass(getApplicationContext(), QuizResultActivity.class);
+				intent.putExtra("quiz", quiz);
+				startActivity(intent);
 				return;
 			}
 			currentQuestion++;
