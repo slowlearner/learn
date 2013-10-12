@@ -1,14 +1,19 @@
 package com.jep.learning;
 
+import com.jep.learning.models.Question;
 import com.jep.learning.models.Quiz;
 import com.jep.learning.services.QuizService;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class QuestionActivity extends CommonActivity {
@@ -31,17 +36,46 @@ public class QuestionActivity extends CommonActivity {
 		displayQuestion();
 		
 	}
+	
+	
 	private void displayQuestion() {
+		Question question = quiz.getQuestions().get(currentQuestion);
+		
 		TextView titleView = (TextView) findViewById(R.id.textQuestionTitle);
-		titleView.setText(quiz.getQuestions().get(currentQuestion).getQuestion());
+		titleView.setText(question.getQuestion());
+		
+		RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+		radioGroup.setOnCheckedChangeListener(onChange);
+		radioGroup.removeAllViews();
+		
+		for(int i=0; i<question.getChoices().size(); i++) {
+			RadioButton b = new RadioButton(getApplicationContext());
+			b.setText(question.getChoices().get(i));
+			b.setTextColor(Color.BLACK);
+			radioGroup.addView(b);
+		}
 	}
+	
+	private OnCheckedChangeListener onChange = new OnCheckedChangeListener() {
+		
+		@Override
+		public void onCheckedChanged(RadioGroup group, int checkedId) {
+			for(int i=0; i< group.getChildCount() ; i++) {
+				if(group.getChildAt(i).getId() == checkedId) {
+					Log.e("app", "set answer to" + i);
+					quiz.getQuestions().get(currentQuestion).setUserAnswer(i+1);
+				}
+			}			
+		}
+	};
+	
+	
+	
 	private OnClickListener onBackClickLister = new OnClickListener() {		
 		@Override
 		public void onClick(View v) {
 			if(currentQuestion-1 < 0) {
-				Intent intent = new Intent();
-				intent.setClass(getApplicationContext(), TutorialsActivity.class);
-				startActivity(intent);
+				back();
 				return;
 			}
 			currentQuestion--;			
@@ -56,6 +90,10 @@ public class QuestionActivity extends CommonActivity {
 		@Override
 		public void onClick(View v) {
 			if(currentQuestion+1 >= quiz.getQuestions().size()) {
+				
+				for(Question q: quiz.getQuestions()) {
+					Log.e("app", "correct " + q.isCorrect());
+				}
 				return;
 			}
 			currentQuestion++;
