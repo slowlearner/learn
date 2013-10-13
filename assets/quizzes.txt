@@ -1,2 +1,7 @@
 Quiz 1:quiz1/item1,quiz1/item2,quiz1/item3,quiz1/item4,quiz1/item5
-Quiz 2:quiz1/item1,quiz1/item2,quiz1/item3,quiz1/item4,quiz1/item5
+Quiz 2:quiz2/item1,quiz2/item2,quiz2/item3,quiz2/item4,quiz2/item5
+Quiz 3:quiz3/item1,quiz3/item2,quiz3/item3,quiz3/item4,quiz3/item5
+Quiz 4:quiz4/item1,quiz4/item2,quiz4/item3,quiz4/item4,quiz4/item5
+Quiz 5:quiz5/item1,quiz5/item2,quiz5/item3,quiz5/item4,quiz5/item5
+Quiz 6:quiz6/item1,quiz6/item2,quiz6/item3,quiz6/item4,quiz6/item5
+Quiz 7:quiz7/item1,quiz7/item2,quiz7/item3,quiz7/item4,quiz7/item5

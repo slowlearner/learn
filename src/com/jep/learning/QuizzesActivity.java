@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 import com.jep.learning.models.Quiz;
 import com.jep.learning.services.QuizService;
+import com.jep.learning.widgets.QuizzesDisabledAdapter;
 
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -25,7 +25,7 @@ public class QuizzesActivity extends CommonActivity {
 		ArrayList<Quiz> quizzes = service.getAllQuizzes();
 		
 		ListView lv = (ListView) findViewById(R.id.listQuizzes);
-		ArrayAdapter<Quiz> adapter = new ArrayAdapter<Quiz>(this, android.R.layout.simple_list_item_1, quizzes);		
+		QuizzesDisabledAdapter<Quiz> adapter = new QuizzesDisabledAdapter<Quiz>(this, android.R.layout.simple_list_item_1, quizzes, prefs);		
 		
 		lv.setAdapter(adapter);
 		lv.setOnItemClickListener(onItemClickListener);

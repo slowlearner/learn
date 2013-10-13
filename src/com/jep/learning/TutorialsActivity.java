@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.jep.learning.models.Chapter;
 import com.jep.learning.services.TutorialService;
-import com.jep.learning.widgets.DisabledArrayAdapter;
+import com.jep.learning.widgets.TutorialsDisabledArrayAdapter;
 
 import android.os.Bundle;
 import android.content.Intent;
@@ -27,7 +27,7 @@ public class TutorialsActivity extends CommonActivity {
 		
 		
 		ListView lv = (ListView) findViewById(R.id.listChapters);
-		DisabledArrayAdapter<Chapter> adapter = new DisabledArrayAdapter<Chapter>(this, android.R.layout.simple_list_item_1, chapters, prefs);		
+		TutorialsDisabledArrayAdapter<Chapter> adapter = new TutorialsDisabledArrayAdapter<Chapter>(this, android.R.layout.simple_list_item_1, chapters, prefs);		
 		
 		lv.setAdapter(adapter);
 		lv.setOnItemClickListener(onItemClickListener);

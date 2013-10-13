@@ -62,10 +62,10 @@
         <activity
             android:name="com.jep.learning.QuizResultActivity"
             android:label="@string/title_activity_quiz_result"
-            android:parentActivityName="com.jep.learning.QuestionActivity" >
+            android:parentActivityName="com.jep.learning.QuizzesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.jep.learning.QuestionActivity" />
+                android:value="com.jep.learning.QuizzesActivity" />
         </activity>
         <activity
             android:name="com.jep.learning.MainAccountActivity"
