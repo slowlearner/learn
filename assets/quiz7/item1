@@ -1,0 +1,6 @@
+Naturally adapter for execution in multi-processor.
+2
+a. Algorithm Efficiency
+b. Parallelism
+c. Memory Access
+d. Roundoff Control
