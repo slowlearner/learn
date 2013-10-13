@@ -5,12 +5,14 @@ import com.jep.learning.models.Tutorial;
 import com.jep.learning.models.User;
 import com.jep.learning.services.SessionService;
 import com.jep.learning.services.TutorialService;
+import com.jep.learning.widgets.CustomWebViewClient;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 
 public class TutorialDetailActivity extends CommonActivity {
@@ -38,10 +40,13 @@ public class TutorialDetailActivity extends CommonActivity {
 	
 	public void displayTutorial() {
 		Tutorial tutorial = chapter.getTutorials().get(currentTutorial);		
-		WebView tvBody = (WebView) findViewById(R.id.webView1);		
+		WebView tvBody = (WebView) findViewById(R.id.webView1);
+		
+		WebViewClient webViewClient = new CustomWebViewClient();
+		tvBody.getSettings().setAllowFileAccess(true);
+		tvBody.setWebViewClient(webViewClient);
 		tvBody.loadData(tutorial.getBody(), "text/html", null);
-		
-		
+				
 		SessionService session = new SessionService(prefs);
 		User user = session.getCurrentUser();
 		User userInSession = session.getUserSession(user);

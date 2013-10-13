@@ -12,5 +12,6 @@
     <string name="title_activity_main_account">Mobile Learning</string>
     <string name="title_activity_account_list">Open Account</string>
     <string name="title_activity_create_account">Create New Account</string>
+    <string name="title_activity_video">VideoActivity</string>
 
 </resources>
